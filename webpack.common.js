@@ -4,13 +4,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/app/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
   },
   plugins: [
-    new HtmlWebpackPlugin({ template: './src/index.html' }),
+    new HtmlWebpackPlugin({ template: './src/app/index.html' }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({ filename: '[name].css' }),
   ],
@@ -27,9 +27,39 @@ module.exports = {
       },
       {
         test: /\.(css|scss)$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: '/',
+            },
+          },
+          'css-loader',
+          'sass-loader',
+        ],
       },
-      { test: /\.(woff(2)?|eot|ttf|otf|jpg|jpeg|png|svg)/, use: ['file-loader'] },
+      {
+        test: /\.(woff(2)?|eot|ttf|otf)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '/fonts/[name].[ext]',
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(jpg|jpeg|png|svg)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '/images/[name].[ext]',
+            },
+          },
+        ],
+      },
     ],
   },
 };
