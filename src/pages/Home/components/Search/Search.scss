@@ -1,0 +1,42 @@
+@import '../../../../assets/styles/variables';
+
+.search {
+  width: 70%;
+  margin: 10px auto;
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  transform: translateY(-50%);
+
+  &__title {
+    font-size: 3rem;
+    text-transform: uppercase;
+    padding: 20px 0;
+  }
+
+  &__form {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__input {
+    width: 100%;
+    border: 1px solid $grey;
+    padding: 20px;
+    height: 30px;
+    border-radius: 5px;
+    outline: none;
+    color: $white;
+    background-color: $black;
+    margin-right: 5px;
+    font-size: 1.6rem;
+    opacity: .5;
+
+    &:focus {
+      color: $red;
+      font-weight: bold;
+      opacity: 1;
+    }
+  }
+}
+
