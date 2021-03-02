@@ -1,4 +1,4 @@
-@import '../../../../assets/styles/variables';
+@import 'src/assets/styles/variables';
 
 .search {
   width: 70%;
@@ -39,4 +39,17 @@
     }
   }
 }
+
+button.search__button {
+  background: $red;
+  color: $white;
+  width: 150px;
+  min-height: 40px;
+  font-size: 1.6rem;
+  &:hover {
+    background: $white;
+    color: $red;
+  }
+}
+
 
