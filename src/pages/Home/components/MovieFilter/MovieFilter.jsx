@@ -9,8 +9,9 @@ const MovieFilter = () => {
         <nav className='movie-filter'>
             <ul className='movie-filter__list'>
                 {movieFilterData.map((movieFilterItem, index) => (
-                    <li className='movie-filter__item'><a href="#" className='movie-filter__link'
-                                                          key={index}>{movieFilterItem}</a></li>
+                    <li key={index} className='movie-filter__item'>
+                        <a href="#" className='movie-filter__link'>{movieFilterItem}</a>
+                    </li>
                 ))}
             </ul>
         </nav>

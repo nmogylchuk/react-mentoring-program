@@ -1,4 +1,4 @@
-@import 'src/assets/styles/variables';
+@import '../../../../../assets/styles/variables';
 
 .three-dots-menu {
   position: absolute;
@@ -9,6 +9,9 @@
   border: 1px solid $white;
   border-radius: 20px;
   opacity: .7;
+  &:hover {
+    cursor: pointer;
+  }
 
   &:after {
     content: '\2807';

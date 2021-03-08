@@ -1,0 +1,64 @@
+@import '../../../../../assets/styles/variables';
+@import '../../../../../assets/styles/mixins';
+
+.movie-add {
+  &__title {
+    font-size: 2rem;
+    text-transform: uppercase;
+  }
+
+  &__form {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__label {
+    color: $red;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+  }
+
+  &__input {
+    display: inline-block;
+    min-height: 30px;
+    border: none;
+    color: $white;
+    font-size: 1.6rem;
+    background: $grey;
+    padding: 10px 20px;
+    margin: 10px 0;
+    width: 100%;
+  }
+
+  &__button {
+    @include button();
+
+    &-wrapper {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 20px;
+    }
+
+    &--reset {
+      background: $dark-grey;
+      color: $red;
+      border: 1px solid $red;
+      margin-right: 10px;
+      &:hover {
+        background: $red;
+        color: $white;
+      }
+    }
+
+    &--submit {
+      background: $red;
+      color: $white;
+      &:hover {
+        background: $dark-grey;
+        color: $red;
+        border: 1px solid $red;
+      }
+    }
+  }
+}
