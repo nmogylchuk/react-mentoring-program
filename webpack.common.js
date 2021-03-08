@@ -27,9 +27,39 @@ module.exports = {
       },
       {
         test: /\.(css|scss)$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: '/',
+            },
+          },
+          'css-loader',
+          'sass-loader',
+        ],
       },
-      { test: /\.(woff(2)?|eot|ttf|otf|jpg|jpeg|png|svg)/, use: ['file-loader'] },
+      {
+        test: /\.(woff(2)?|eot|ttf|otf)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '/fonts/[name].[ext]',
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(jpg|jpeg|png|svg)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '/images/[name].[ext]',
+            },
+          },
+        ],
+      },
     ],
   },
 };

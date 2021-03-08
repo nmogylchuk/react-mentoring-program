@@ -1,0 +1,17 @@
+@import "src/assets/styles/variables";
+
+.footer {
+  height: 70px;
+  padding: 20px;
+
+  &__link {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.logo {
+  width: 100px;
+}
