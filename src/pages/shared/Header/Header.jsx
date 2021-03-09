@@ -26,8 +26,7 @@ class Header extends React.Component {
                         <Logo/>
                     </a>
                     <MovieAddButton onClick={this.showAddModal}/>
-                    {this.state.addModalVisible ?
-                        <MovieAdd onClose={this.closeAddModal} /> : null}
+                    {this.state.addModalVisible && <MovieAdd onClose={this.closeAddModal} />}
                 </div>
                 <Search/>
             </header>

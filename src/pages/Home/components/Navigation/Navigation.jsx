@@ -5,10 +5,13 @@ import 'pages/Home/components/Navigation/Navigatio.scss';
 
 const Navigation = () => {
 
+    const movieFilterData = ['All', 'Documentary', 'Comedy', 'Horror', 'Crime'];
+    const movieSortData = ['Release Date', 'From A to Z', 'From Z to A'];
+
     return (
         <div className='navigation'>
-            <MovieFilter />
-            <MovieSort />
+            <MovieFilter movieFilterData={movieFilterData}/>
+            <MovieSort movieSortData={movieSortData}/>
         </div>
     )
 };

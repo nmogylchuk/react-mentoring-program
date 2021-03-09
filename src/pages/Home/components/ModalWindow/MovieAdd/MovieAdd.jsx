@@ -1,5 +1,6 @@
 import React from 'react';
 import ModalWindow from 'pages/Home/components/ModalWindow/ModalWindow';
+import InputField from "pages/shared/InputField/InputField";
 import 'pages/Home/components/ModalWindow/MovieAdd/MovieAdd.scss';
 
 class MovieAdd extends React.Component {
@@ -14,58 +15,19 @@ class MovieAdd extends React.Component {
             runtime: ''
         };
 
-        this.handleMovieAddIdChange = this.handleMovieAddIdChange.bind(this);
-        this.handleMovieAddTitleChange = this.handleMovieAddTitleChange.bind(this);
-        this.handleMovieAddDateChange = this.handleMovieAddDateChange.bind(this);
-        this.handleMovieAddGenreChange = this.handleMovieAddGenreChange.bind(this);
-        this.handleMovieAddOverviewChange = this.handleMovieAddOverviewChange.bind(this);
-        this.handleMovieAddRuntimeChange = this.handleMovieAddRuntimeChange.bind(this);
+        this.handleMovieChange = this.handleMovieChange.bind(this);
         this.handleMovieAddSubmit = this.handleMovieAddSubmit.bind(this);
     }
 
-    handleMovieAddIdChange(event) {
+    handleMovieChange(event) {
+        const {name, value} = event.target;
         this.setState({
-            id: event.target.value
-        });
-    }
-
-    handleMovieAddTitleChange(event) {
-        this.setState({
-            title: event.target.value
-        });
-    }
-
-    handleMovieAddDateChange(event) {
-        this.setState({
-            date: event.target.value
-        });
-    }
-
-    handleMovieAddGenreChange(event) {
-        this.setState({
-            genre: event.target.value
-        });
-    }
-
-    handleMovieAddOverviewChange(event) {
-        this.setState({
-            overview: event.target.value
-        });
-    }
-    handleMovieAddRuntimeChange(event) {
-        this.setState({
-            runtime: event.target.value
+            [name]: value
         });
     }
 
     handleMovieAddSubmit(event) {
-        alert(`Saved movie data: 
-        id: ${this.state.id}  
-        title: ${this.state.title}
-        date: ${this.state.date},
-        genre: ${this.state.genre},
-        overview: ${this.state.overview},
-        runtime: ${this.state.runtime}`);
+        alert("Saved movie data");
         event.preventDefault();
     }
 
@@ -75,54 +37,23 @@ class MovieAdd extends React.Component {
                 <div className="movie-add">
                     <div className="movie-add__title">Add movie</div>
                     <form className="movie-add__form" onSubmit={this.handleMovieAddSubmit}>
-                        <label className="movie-add__label">ID</label>
-                        <input
-                            className="movie-add__input"
-                            type='text'
-                            placeholder='Id here'
-                            required
-                            onChange={this.handleMovieAddIdChange}
-                        />
-                        <label className="movie-add__label">Title</label>
-                        <input
-                            className="movie-add__input"
-                            type='text'
-                            placeholder='Title here'
-                            required
-                            onChange={this.handleMovieAddTitleChange}
-                        />
-                        <label className="movie-add__label">Release date</label>
-                        <input
-                            className="movie-add__input"
-                            type='date'
-                            placeholder='Release here'
-                            required
-                            onChange={this.handleMovieAddDateChange}
-                        />
-                        <label className="movie-add__label">Genre</label>
-                        <input
-                            className="movie-add__input"
-                            type='text'
-                            placeholder='Genres here'
-                            required
-                            onChange={this.handleMovieAddGenreChange}
-                        />
-                        <label className="movie-add__label">Overview</label>
-                        <input
-                            className="movie-add__input"
-                            type='text'
-                            placeholder='Overview here'
-                            required
-                            onChange={this.handleMovieAddOverviewChange}
-                        />
-                        <label className="movie-add__label">Runtime</label>
-                        <input
-                            className="movie-add__input"
-                            type='number'
-                            placeholder='Runtime here'
-                            required
-                            onChange={this.handleMovieAddRuntimeChange}
-                        />
+                        <InputField label="Id" value={this.state.id} type="text" name="id" placeholder="Id here"
+                                    handleMovieChange={this.handleMovieChange} required/>
+                        <InputField label="Title" value={this.state.title} type="text" name="title"
+                                    placeholder="Title here"
+                                    handleMovieChange={this.handleMovieChange} required/>
+                        <InputField label="Release date" value={this.state.date} type="date" name="date"
+                                    placeholder="Release date here"
+                                    handleMovieChange={this.handleMovieChange} required/>
+                        <InputField label="Genre" value={this.state.genre} type="text" name="genre"
+                                    placeholder="Genres here"
+                                    handleMovieChange={this.handleMovieChange} required/>
+                        <InputField label="Overview" value={this.state.overview} type="text" name="overview"
+                                    placeholder="Overview here"
+                                    handleMovieChange={this.handleMovieChange} required/>
+                        <InputField label="Overview" value={this.state.runtime} type="number" name="runtime"
+                                    placeholder="Runtime here"
+                                    handleMovieChange={this.handleMovieChange} required/>
                         <div className="movie-add__button-wrapper">
                             <button className="movie-add__button movie-add__button--reset" type="reset">Reset
                             </button>

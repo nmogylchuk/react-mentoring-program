@@ -1,9 +1,7 @@
 import React from 'react';
 import 'pages/Home/components/MovieFilter/MovieFilter.scss';
 
-const MovieFilter = () => {
-
-    let movieFilterData = ['All', 'Documentary', 'Comedy', 'Horror', 'Crime'];
+const MovieFilter = ({movieFilterData}) => {
 
     return (
         <nav className='movie-filter'>

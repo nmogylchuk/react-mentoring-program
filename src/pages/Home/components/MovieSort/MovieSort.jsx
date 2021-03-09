@@ -1,9 +1,7 @@
 import React from 'react';
 import 'pages/Home/components/MovieSort/MovieSort.scss';
 
-const MovieSort = () => {
-
-    const movieSortData = ['Release Date', 'From A to Z', 'From Z to A'];
+const MovieSort = ({movieSortData}) => {
 
     return (
         <div className='movie-sort'>

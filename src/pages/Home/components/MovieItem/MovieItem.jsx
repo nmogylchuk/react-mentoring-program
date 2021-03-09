@@ -25,9 +25,9 @@ class MovieItem extends React.Component {
         return (
             <Grid item lg={3} md={4} sm={6} xs={12}>
                 <div className="movie-item">
-                    <ThreeDotMenu onClick={this.showThreeDotMenuActions}/>
-                    {this.state.threeDotMenuVisible ?
-                        <ThreeDotMenuActions onClose={this.closeThreeDotMenuActions} movie={this.props}/> : null}
+                    <ThreeDotMenu onClick={this.showThreeDotMenuActions} />
+                    {this.state.threeDotMenuVisible &&
+                    <ThreeDotMenuActions onClose={this.closeThreeDotMenuActions} movie={this.props}/>}
                     <img src={this.props.poster_path} alt={`picture of ${this.props.title}`}/>
                     <div className="movie-item__info">
                         <div className="movie-item__details">
