@@ -1,6 +1,7 @@
 import React from 'react';
 import ModalWindow from 'pages/Home/components/ModalWindow/ModalWindow';
 import InputField from "pages/shared/InputField/InputField";
+import InputSelect from "pages/shared/InputSelect/InputSelect";
 import 'pages/Home/components/ModalWindow/MovieAddEdit/MovieAddEdit.scss';
 
 class MovieAddEdit extends React.Component {
@@ -10,7 +11,8 @@ class MovieAddEdit extends React.Component {
             id: props.movie.id,
             title: props.movie.title,
             date: props.movie.release_date,
-            genre: Array.isArray(props.movie.genres) ? props.movie.genres.join(', ') : '',
+            // genre: Array.isArray(props.movie.genres) ? props.movie.genres.join(', ') : '',
+            genre: props.movie.genres,
             overview: props.movie.overview,
             runtime: props.movie.runtime,
             isEdit: props.isEdit
@@ -46,9 +48,7 @@ class MovieAddEdit extends React.Component {
                         <InputField label="Release date" value={this.state.date} type="date" name="date"
                                     placeholder="Release date here"
                                     handleMovieChange={this.handleMovieChange} required/>
-                        <InputField label="Genre" value={this.state.genre} type="text" name="genre"
-                                    placeholder="Genres here"
-                                    handleMovieChange={this.handleMovieChange} required/>
+                        <InputSelect label="Genre" name="genre" genres={this.state.genre}/>
                         <InputField label="Overview" value={this.state.overview} type="text" name="overview"
                                     placeholder="Overview here"
                                     handleMovieChange={this.handleMovieChange} required/>
@@ -58,7 +58,8 @@ class MovieAddEdit extends React.Component {
                         <div className="movie-edit__button-wrapper">
                             <button className="movie-edit__button movie-edit__button--reset" type="reset">Reset
                             </button>
-                            <button className="movie-edit__button movie-edit__button--submit" type="submit">{this.state.isEdit ? 'Save' : 'Submit'}
+                            <button className="movie-edit__button movie-edit__button--submit"
+                                    type="submit">{this.state.isEdit ? 'Save' : 'Submit'}
                             </button>
                         </div>
                     </form>

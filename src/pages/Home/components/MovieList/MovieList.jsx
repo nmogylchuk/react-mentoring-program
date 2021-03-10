@@ -29,7 +29,7 @@ class MovieList extends Component {
     }
 
     render() {
-        const moviesData = this.state.data;
+        const { data: moviesData } = this.state;
         const moviesCount = this.isEmptyArray(moviesData) ? 0 : moviesData.totalAmount;
         return (
             <div className='movie-list'>

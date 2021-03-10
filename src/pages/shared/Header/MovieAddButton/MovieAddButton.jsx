@@ -9,8 +9,4 @@ const MovieAddButton = (props) => {
     );
 }
 
-MovieAddButton.defaultProps = {
-    handleShow: () => {}
-};
-
 export default MovieAddButton;

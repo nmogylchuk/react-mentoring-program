@@ -2,17 +2,9 @@ import React from 'react';
 import MovieAddButton from 'pages/shared/Header/MovieAddButton/MovieAddButton';
 import Search from 'pages/Home/components/Search/Search'
 import Logo from 'pages/shared/Logo/Logo';
-import 'pages/shared/Header/Header.scss';
 import MovieAddEdit from "pages/Home/components/ModalWindow/MovieAddEdit/MovieAddEdit";
-
-const movie = {
-    id: '',
-    title: '',
-    date: '',
-    genre: '',
-    overview: '',
-    runtime: ''
-}
+import {movie} from 'utils/constants'
+import 'pages/shared/Header/Header.scss';
 
 class Header extends React.Component {
     state = {

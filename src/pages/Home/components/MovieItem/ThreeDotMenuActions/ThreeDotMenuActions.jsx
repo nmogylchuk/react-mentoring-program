@@ -2,14 +2,8 @@ import React from 'react';
 import MovieAddEdit from 'pages/Home/components/ModalWindow/MovieAddEdit/MovieAddEdit';
 import MovieDelete from 'pages/Home/components/ModalWindow/MovieDelete/MovieDelete';
 import CloseButton from 'pages/shared/CloseButton/CloseButton';
+import {modals} from 'utils/constants';
 import 'pages/Home/components/MovieItem/ThreeDotMenuActions/ThreeDotMenuActions.scss';
-
-const modals = {
-    EDIT: 'edit',
-    DELETE: 'delete',
-    ADD: 'add',
-    DEFAULT: null
-}
 
 class ThreeDotMenuActions extends React.Component {
 
@@ -45,8 +39,10 @@ class ThreeDotMenuActions extends React.Component {
                         Delete Movie
                     </div>
                 </div>
-                { this.state.modalType === modals.EDIT && <MovieAddEdit onClose={this.closeEditModal} movie={this.props.movie} isEdit={true} />}
-                { this.state.modalType === modals.DELETE && <MovieDelete onClose={this.closeDeleteModal} movie={this.props.movie} />}
+                {this.state.modalType === modals.EDIT &&
+                <MovieAddEdit onClose={this.closeEditModal} movie={this.props.movie} isEdit={true}/>}
+                {this.state.modalType === modals.DELETE &&
+                <MovieDelete onClose={this.closeDeleteModal} movie={this.props.movie}/>}
             </div>
         );
     }

@@ -20,7 +20,7 @@ function InputField({label, value, type, name, placeholder, handleMovieChange}) 
 
 InputField.propTypes = {
     label: PropTypes.string.isRequired,
-    value: PropTypes.any.isRequired,
+    value: PropTypes.any,
     type: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     placeholder: PropTypes.string.isRequired,
