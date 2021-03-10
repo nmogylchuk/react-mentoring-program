@@ -1,29 +1,36 @@
 import React from 'react';
-import MovieEdit from 'pages/Home/components/ModalWindow/MovieEdit/MovieEdit';
+import MovieAddEdit from 'pages/Home/components/ModalWindow/MovieAddEdit/MovieAddEdit';
 import MovieDelete from 'pages/Home/components/ModalWindow/MovieDelete/MovieDelete';
 import CloseButton from 'pages/shared/CloseButton/CloseButton';
 import 'pages/Home/components/MovieItem/ThreeDotMenuActions/ThreeDotMenuActions.scss';
 
+const modals = {
+    EDIT: 'edit',
+    DELETE: 'delete',
+    ADD: 'add',
+    DEFAULT: null
+}
+
 class ThreeDotMenuActions extends React.Component {
+
     state = {
-        editModalVisible: false,
-        deleteModalVisible: false,
+        modalType: modals.DEFAULT
     }
 
     showEditModal = () => {
-        this.setState({editModalVisible: true});
+        this.setState({modalType: modals.EDIT})
     }
 
     showDeleteModal = () => {
-        this.setState({deleteModalVisible: true});
+        this.setState({modalType: modals.DELETE})
     }
 
     closeEditModal = () => {
-        this.setState({editModalVisible: false});
+        this.setState({modalType: modals.DEFAULT})
     }
 
     closeDeleteModal = () => {
-        this.setState({deleteModalVisible: false});
+        this.setState({modalType: modals.DEFAULT})
     }
 
     render() {
@@ -38,9 +45,8 @@ class ThreeDotMenuActions extends React.Component {
                         Delete Movie
                     </div>
                 </div>
-                {this.state.editModalVisible && <MovieEdit onClose={this.closeEditModal} movie={this.props.movie}/>}
-                {this.state.deleteModalVisible &&
-                <MovieDelete onClose={this.closeDeleteModal} movie={this.props.movie}/>}
+                { this.state.modalType === modals.EDIT && <MovieAddEdit onClose={this.closeEditModal} movie={this.props.movie} isEdit={true} />}
+                { this.state.modalType === modals.DELETE && <MovieDelete onClose={this.closeDeleteModal} movie={this.props.movie} />}
             </div>
         );
     }

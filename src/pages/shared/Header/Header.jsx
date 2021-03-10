@@ -1,9 +1,18 @@
 import React from 'react';
 import MovieAddButton from 'pages/shared/Header/MovieAddButton/MovieAddButton';
 import Search from 'pages/Home/components/Search/Search'
-import MovieAdd from 'pages/Home/components/ModalWindow/MovieAdd/MovieAdd';
 import Logo from 'pages/shared/Logo/Logo';
 import 'pages/shared/Header/Header.scss';
+import MovieAddEdit from "pages/Home/components/ModalWindow/MovieAddEdit/MovieAddEdit";
+
+const movie = {
+    id: '',
+    title: '',
+    date: '',
+    genre: '',
+    overview: '',
+    runtime: ''
+}
 
 class Header extends React.Component {
     state = {
@@ -26,7 +35,7 @@ class Header extends React.Component {
                         <Logo/>
                     </a>
                     <MovieAddButton onClick={this.showAddModal}/>
-                    {this.state.addModalVisible && <MovieAdd onClose={this.closeAddModal} />}
+                    {this.state.addModalVisible && <MovieAddEdit onClose={this.closeAddModal} movie={movie}/>}
                 </div>
                 <Search/>
             </header>
