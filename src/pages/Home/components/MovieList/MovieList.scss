@@ -1,10 +1,12 @@
 @import 'src/assets/styles/variables';
 
 .movie-list {
-  margin: 10px;
+  background-color: $dark-grey;
+  margin: 0;
 
   &__count {
-    margin: 20px 10px 10px 10px;
+    margin: 0 10px;
+    padding: 20px 0 0;
   }
 
   &__number {

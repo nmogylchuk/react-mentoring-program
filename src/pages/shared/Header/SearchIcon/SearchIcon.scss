@@ -1,0 +1,14 @@
+@import '../../../../assets/styles/variables';
+
+button.search-icon {
+  background: $red;
+  color: $white;
+  width: 150px;
+  min-height: 40px;
+  font-size: 1.6rem;
+
+  &:hover {
+    background: $white;
+    color: $red;
+  }
+}

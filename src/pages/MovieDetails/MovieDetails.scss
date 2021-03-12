@@ -1,0 +1,41 @@
+@import 'src/assets/styles/variables';
+
+.movie-details {
+  height: calc(100vh - 140px);
+  display: flex;
+  margin: 20px;
+
+  &__picture {
+    width: 30%;
+  }
+
+  &__info {
+    width: 70%;
+    margin-left: 15px;
+    padding: 20px 0;
+  }
+
+  &__title {
+    font-size: 5rem;
+    padding: 10px 0;
+  }
+
+  &__details {
+    display: flex;
+    color: $red;
+    font-size: 2rem;
+    padding: 20px 0;
+  }
+
+  &__year {
+    margin-right: 20px;
+  }
+
+  &__genre {
+    padding: 10px 0;
+  }
+
+  &__description {
+    padding: 10px 0;
+  }
+}

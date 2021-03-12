@@ -4,6 +4,7 @@ import CloseButton from 'pages/shared/CloseButton/CloseButton';
 import 'pages/Home/components/ModalWindow/ModalWindow.scss';
 
 const ModalWindow = (props) => {
+    const {closeWindow} = props;
 
     const domEl = document.getElementById("modal");
     if (!domEl) return null;
@@ -11,7 +12,7 @@ const ModalWindow = (props) => {
     return createPortal (
         <>
             <div className="modal-window">
-                <CloseButton onClick={props.onClick}/>
+                <CloseButton closeMenu={closeWindow}/>
                 {props.children}
             </div>
             <div className="modal-window__background"></div>

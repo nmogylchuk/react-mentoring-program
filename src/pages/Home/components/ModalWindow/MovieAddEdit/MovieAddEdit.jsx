@@ -11,7 +11,6 @@ class MovieAddEdit extends React.Component {
             id: props.movie.id,
             title: props.movie.title,
             date: props.movie.release_date,
-            // genre: Array.isArray(props.movie.genres) ? props.movie.genres.join(', ') : '',
             genre: props.movie.genres,
             overview: props.movie.overview,
             runtime: props.movie.runtime,
@@ -36,7 +35,7 @@ class MovieAddEdit extends React.Component {
 
     render() {
         return (
-            <ModalWindow onClick={this.props.onClose}>
+            <ModalWindow closeWindow={this.props.onClose}>
                 <div className="movie-edit">
                     <div className="movie-edit__title">{this.state.isEdit ? 'Edit' : 'Add' + ' movie'}</div>
                     <form className="movie-edit__form" ref="form" onSubmit={this.handleMovieEditSubmit}>
