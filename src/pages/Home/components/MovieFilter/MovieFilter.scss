@@ -1,0 +1,39 @@
+@import 'src/assets/styles/variables';
+
+.movie-filter {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    padding: 20px 15px;
+    text-transform: uppercase;
+    position: relative;
+  }
+
+  &__link {
+    &:hover {
+      color: $red;
+    }
+
+    &:focus, &:active {
+      color: $red;
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        border-bottom: 2px solid $red;
+        bottom: -14px;
+        margin: 10px;
+        z-index: 1;
+      }
+    }
+  }
+
+  &__link {
+    color: $white;
+  }
+
+}

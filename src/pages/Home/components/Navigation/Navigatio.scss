@@ -1,0 +1,20 @@
+@import 'src/assets/styles/variables';
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 5px 10px;
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    border-bottom: 2px solid $grey;
+    bottom: -10px;
+    margin: 10px;
+  }
+}
+

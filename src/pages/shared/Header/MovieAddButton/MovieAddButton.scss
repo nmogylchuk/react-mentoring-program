@@ -1,0 +1,14 @@
+@import '../../../../assets/styles/variables';
+
+button.movie-add-button {
+  background: $white;
+  color: $red;
+  width: 150px;
+  min-height: 40px;
+  font-size: 1.6rem;
+
+  &:hover {
+    background: $red;
+    color: $white;
+  }
+}

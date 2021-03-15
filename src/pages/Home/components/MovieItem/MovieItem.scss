@@ -1,0 +1,33 @@
+.movie-item {
+  margin: 10px;
+  position: relative;
+
+  &__picture {
+    border-radius: 10px;
+  }
+
+  &__info {
+    margin: 10px 0;
+  }
+
+  &__details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    font-weight: bold;
+  }
+
+  &__release-date {
+    border: 1px solid grey;
+    padding: 3px 10px;
+    font-size: 1.2rem;
+    height: 2rem;
+  }
+
+  &__genres {
+    font-size: 1.4rem;
+  }
+}

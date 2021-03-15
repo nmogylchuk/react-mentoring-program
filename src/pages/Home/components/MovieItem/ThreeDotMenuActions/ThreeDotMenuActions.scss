@@ -1,0 +1,22 @@
+@import 'src/assets/styles/variables';
+
+.three-dot-menu-actions {
+  position: absolute;
+  right: 5px;
+  top: 50px;
+  display: flex;
+  flex-direction: column;
+  width: 180px;
+  background-color: $dark-grey;
+
+  &__item {
+    cursor: pointer;
+    min-width: 100%;
+    padding: 10px 20px;
+    margin: 0;
+
+    &:hover {
+      background-color: $red;
+    }
+  }
+}

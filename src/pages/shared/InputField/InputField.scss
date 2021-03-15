@@ -1,0 +1,25 @@
+@import 'src/assets/styles/variables';
+
+.input-field {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+
+  &__label {
+    color: $red;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+  }
+
+  &__input {
+    display: inline-block;
+    min-height: 30px;
+    border: none;
+    color: $white;
+    font-size: 1.6rem;
+    background: $grey;
+    padding: 10px 20px;
+    margin: 10px 0;
+    width: 100%;
+  }
+}

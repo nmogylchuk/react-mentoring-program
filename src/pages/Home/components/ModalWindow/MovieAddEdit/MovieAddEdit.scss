@@ -1,0 +1,42 @@
+@import 'src/assets/styles/variables';
+@import 'src/assets/styles/mixins';
+
+.movie-edit {
+  &__title {
+    font-size: 2rem;
+    text-transform: uppercase;
+  }
+
+  &__button {
+    @include button();
+
+    &-wrapper {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 20px;
+    }
+
+    &--reset {
+      background: $dark-grey;
+      color: $red;
+      border: 1px solid $red;
+      margin-right: 10px;
+
+      &:hover {
+        background: $red;
+        color: $white;
+      }
+    }
+
+    &--submit {
+      background: $red;
+      color: $white;
+
+      &:hover {
+        background: $dark-grey;
+        color: $red;
+        border: 1px solid $red;
+      }
+    }
+  }
+}

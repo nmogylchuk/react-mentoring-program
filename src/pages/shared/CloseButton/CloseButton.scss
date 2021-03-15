@@ -1,0 +1,30 @@
+@import "src/assets/styles/variables";
+
+.close-button {
+  height: 30px;
+  opacity: .5;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:before, &:after {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    content: '';
+    height: 20px;
+    width: 2px;
+    z-index: 1;
+    background-color: $white;
+  }
+
+  &::after {
+    transform: rotate(45deg);
+  }
+
+  &::before {
+    transform: rotate(-45deg);
+  }
+}
