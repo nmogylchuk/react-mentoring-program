@@ -23,9 +23,14 @@ const movie = {
     runtime: ''
 }
 
+function isEmptyArray(object) {
+    return object == null || (typeof object !== 'undefined' && object.length === 0);
+}
+
 module.exports = {
     movieFilterData,
     movieSortData,
     modals,
-    movie
+    movie,
+    isEmptyArray
 }

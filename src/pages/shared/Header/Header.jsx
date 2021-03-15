@@ -1,16 +1,14 @@
 import React, {useState, useCallback} from 'react';
+import { Link } from 'react-router-dom';
 import MovieAddButton from 'pages/shared/Header/MovieAddButton/MovieAddButton';
-import Search from 'pages/Home/components/Search/Search';
-import MovieDetails from "pages/MovieDetails/MovieDetails";
 import Logo from 'pages/shared/Logo/Logo';
-import MovieAddEdit from "pages/Home/components/ModalWindow/MovieAddEdit/MovieAddEdit";
-import {movie} from 'utils/constants'
+import MovieAddEdit from 'pages/Home/components/ModalWindow/MovieAddEdit/MovieAddEdit';
+import SearchIcon from 'pages/shared/Header/SearchIcon/SearchIcon';
+import {movie} from 'utils/constants';
 import 'pages/shared/Header/Header.scss';
-import SearchIcon from "pages/shared/Header/SearchIcon/SearchIcon";
-import Home from 'pages/Home/Home';
 
 
-const Header = (props) => {
+function Header(props) {
 
     const {searchIconVisible, handleSearchIcon} = props;
 
@@ -23,9 +21,9 @@ const Header = (props) => {
     return (
         <header className="header">
             <div className="header__wrapper">
-                <a href="#" className="header__link">
+                <Link to="/" className="header__link">
                     <Logo/>
-                </a>
+                </Link>
                 {!searchIconVisible && <MovieAddButton openModal={handleAddModal}/>}
                 {addModalVisible && <MovieAddEdit onClose={handleAddModal} movie={movie}/>}
                 {searchIconVisible && <SearchIcon handleSearchIcon={handleSearchIcon}/>}

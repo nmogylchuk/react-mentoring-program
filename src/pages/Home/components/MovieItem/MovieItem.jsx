@@ -1,5 +1,5 @@
 import React, {useState, useCallback} from 'react';
-import {useHistory} from "react-router-dom";
+import {useHistory} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
 import ThreeDotMenu from 'pages/Home/components/MovieItem/ThreeDotMenu/ThreeDotMenu';
@@ -27,7 +27,7 @@ const MovieItem = (props) => {
 
     return (
         <Grid item lg={3} md={4} sm={6} xs={12}>
-            <div className="movie-item">
+            <article className="movie-item">
                 <ThreeDotMenu showMenu={handleThreeDotMenuActions}/>
                 {threeDotMenuVisible &&
                 <ThreeDotMenuActions closeMenu={handleThreeDotMenuActions} movie={movie}/>}
@@ -39,7 +39,7 @@ const MovieItem = (props) => {
                     </div>
                     <div className="movie-item__genres">{genre}</div>
                 </div>
-            </div>
+            </article>
         </Grid>
     );
 }

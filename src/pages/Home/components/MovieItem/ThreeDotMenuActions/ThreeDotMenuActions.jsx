@@ -6,22 +6,18 @@ import {modals} from 'utils/constants';
 import 'pages/Home/components/MovieItem/ThreeDotMenuActions/ThreeDotMenuActions.scss';
 
 const ThreeDotMenuActions = (props) => {
-
     const {closeMenu, movie} = props;
 
     const [modalType, setModalType] = useState(modals.DEFAULT);
 
     const showEditModal = () => {
-        console.log("show edit modal")
         setModalType(modals.EDIT)
     }
 
     const showDeleteModal = () => {
-        console.log("show delete modal")
         setModalType(modals.DELETE)
     }
-    const closeModal =() => {
-        console.log("close modal")
+    const closeModal = () => {
         setModalType(modals.DEFAULT)
     };
 

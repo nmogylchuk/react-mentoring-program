@@ -1,30 +1,14 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import MovieItem from 'pages/Home/components/MovieItem/MovieItem';
 import 'pages/Home/components/MovieList/MovieList.scss';
 import movies from 'data/movies.json';
+import useMockFetch from "pages/hooks/useMockFetch";
+import {isEmptyArray} from "utils/constants";
 
 const MovieList = (props) => {
     const {handleSearchIcon} = props;
-    const [moviesData, setMoviesData] = useState([]);
-
-    useEffect(() => {
-            try {
-                const getMovies = setTimeout(() => {
-                    setMoviesData(movies);
-                }, 200);
-                return () => {
-                    clearTimeout(getMovies);
-                }
-            } catch (e) {
-                console.error(e);
-            }
-        },
-        [])
-
-    function isEmptyArray(object) {
-        return typeof object !== 'undefined' && object.length === 0;
-    }
+    const moviesData = useMockFetch(movies);
 
     const moviesCount = isEmptyArray(moviesData) ? 0 : moviesData.totalAmount;
     return (
@@ -35,15 +19,7 @@ const MovieList = (props) => {
             <Grid container spacing={1} alignContent={'space-around'}>
                 {isEmptyArray(moviesData) ? null : (
                     moviesData.data.map(movie => (
-                        <MovieItem key={movie.id} movie={movie} handleSearchIcon={handleSearchIcon}
-                                   // id={movie.id}
-                                   // poster_path={movie.poster_path}
-                                   // title={movie.title}
-                                   // genres={movie.genres}
-                                   // release_date={movie.release_date}
-                                   // overview={movie.overview}
-                                   // runtime={movie.runtime}
-                        />
+                        <MovieItem key={movie.id} movie={movie} handleSearchIcon={handleSearchIcon}/>
 
                     ))
                 )}

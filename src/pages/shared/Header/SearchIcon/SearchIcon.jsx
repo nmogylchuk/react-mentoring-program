@@ -3,7 +3,7 @@ import {useHistory} from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import 'pages/shared/Header/SearchIcon/SearchIcon.scss';
 
-const SearchIcon = (props) => {
+function SearchIcon(props) {
     const {handleSearchIcon} = props;
     const history = useHistory();
 
