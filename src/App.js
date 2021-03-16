@@ -7,12 +7,11 @@ import MovieDetails from "pages/MovieDetails/MovieDetails";
 
 const App = () => {
 
-    const [searchIconVisible, setShowSearchIconVisible] = useState(true);
+    const [searchIconVisible, setShowSearchIconVisible] = useState(false);
 
-    const handleSearchIcon = useCallback(() => {
-        console.log("change button");
-        setShowSearchIconVisible(!searchIconVisible);
-    }, [searchIconVisible]);
+    const handleSearchIcon = (visibility) => {
+        setShowSearchIconVisible(visibility);
+    };
 
     return (
         <BrowserRouter>

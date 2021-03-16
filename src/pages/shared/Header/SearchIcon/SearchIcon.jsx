@@ -8,7 +8,7 @@ function SearchIcon(props) {
     const history = useHistory();
 
     const goToSearch = () => {
-        handleSearchIcon();
+        handleSearchIcon(false);
         history.push(`/`)
     }
 

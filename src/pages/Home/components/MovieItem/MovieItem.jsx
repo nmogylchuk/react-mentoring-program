@@ -18,7 +18,7 @@ const MovieItem = (props) => {
     const history = useHistory();
 
     const goToMovieDetails = () => {
-        handleSearchIcon();
+        handleSearchIcon(true);
         history.push(`/${movie.id}`)
     }
 
