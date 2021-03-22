@@ -1,15 +1,24 @@
 import React from 'react';
 import 'pages/Home/components/MovieSort/MovieSort.scss';
+import {movieSortData} from 'utils/constants';
+import {useDispatch} from "react-redux";
+import {setSortingValue} from "store/actions/SortingActions";
 
-const MovieSort = ({movieSortData}) => {
+const MovieSort = () => {
+    const dispatch = useDispatch();
+
+    const sortingOnChange = (ev) => {
+        const sortBy = ev.target.value;
+        dispatch(setSortingValue(sortBy));
+    };
 
     return (
         <div className='movie-sort'>
             <div className='movie-sort__name'>Sort by</div>
             <div className='movie-sort__wrapper'>
-                <select className='movie-sort__list'>
+                <select onChange={sortingOnChange} className='movie-sort__list'>
                     {movieSortData.map((movieSortItem, index) => (
-                        <option className='movie-sort__item' key={index}>{movieSortItem}</option>
+                        <option className='movie-sort__item' value={movieSortItem.value} key={index}>{movieSortItem.field}</option>
                     ))}
                 </select>
             </div>

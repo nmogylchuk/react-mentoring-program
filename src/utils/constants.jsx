@@ -1,7 +1,22 @@
 // HELPERS
 
-const movieFilterData = ['All', 'Documentary', 'Comedy', 'Horror', 'Crime'];
-const movieSortData = ['Release Date', 'From A to Z', 'From Z to A'];
+const movieFilterData = [
+    {value: 'all', field: 'All'},
+    {value: 'documentary', field: 'Documentary'},
+    {value: 'comedy', field: 'Comedy'},
+    {value: 'horror', field: 'Horror'}
+];
+
+const movieSortData = [
+    {
+        value: 'release_date',
+        field: 'Release Date'
+    },
+    {
+        value: 'title',
+        field: 'Name'
+    }
+];
 
 const modals = {
     EDIT: 'edit',
