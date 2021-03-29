@@ -1,8 +1,8 @@
 import React from 'react';
-import 'pages/Home/components/MovieSort/MovieSort.scss';
+import {useDispatch} from 'react-redux';
 import {movieSortData} from 'utils/constants';
-import {useDispatch} from "react-redux";
-import {setSortingValue} from "store/actions/SortingActions";
+import {setSortingValue} from 'store/actions/SortingActions';
+import 'pages/Home/components/MovieSort/MovieSort.scss';
 
 const MovieSort = () => {
     const dispatch = useDispatch();

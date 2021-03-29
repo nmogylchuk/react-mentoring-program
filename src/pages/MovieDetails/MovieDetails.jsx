@@ -1,22 +1,28 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 import 'pages/MovieDetails/MovieDetails.scss';
-import movies from 'data/movies.json';
-import useMockFetch from "pages/hooks/useMockFetch";
-import {isEmptyArray} from "utils/constants";
+import {isEmpty} from "utils/constants";
+import {useDispatch, useSelector} from "react-redux";
+import {getMovie} from "store/selectors";
+import {requestMovie} from "store/actions/MoviesActions";
 
 const MovieDetails = () => {
-
+    const dispatch = useDispatch();
     const movieId = Number(useParams().id);
-    const moviesDetails = useMockFetch(movies, movieId);
-    const {poster_path, title, genres, release_date, vote_average, runtime, overview} = moviesDetails;
+    const movie = useSelector(getMovie);
+
+    useEffect(() => {
+        dispatch(requestMovie(movieId));
+    }, [dispatch, movieId]);
+
+    const {poster_path, title, genres, release_date, vote_average, runtime, overview} = movie;
 
     const releaseDate = new Date(release_date).getFullYear();
     const genre = Array.isArray(genres) ? genres.join(', ') : '';
 
     return (
         <>
-            {isEmptyArray(moviesDetails) ? null : (
+            {Object.keys(movie).length == 0 ? null : (
                 <article className="movie-details">
                     <img className="movie-details__picture" src={poster_path} alt={title}/>
                     <div className="movie-details__info">

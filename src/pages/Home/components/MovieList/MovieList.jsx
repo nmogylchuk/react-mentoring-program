@@ -2,12 +2,9 @@ import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import MovieItem from 'pages/Home/components/MovieItem/MovieItem';
 import 'pages/Home/components/MovieList/MovieList.scss';
-// import movies from 'data/movies.json';
-import useMockFetch from "pages/hooks/useMockFetch";
 import {isEmptyArray} from "utils/constants";
 
-const MovieList = ({movies}) => {
-    const {handleSearchIcon} = movies;
+const MovieList = ({movies, handleSearchIcon}) => {
     const moviesCount = isEmptyArray(movies) ? 0 : movies.totalAmount;
 
     return (

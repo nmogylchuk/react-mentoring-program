@@ -1,71 +1,82 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import ModalWindow from 'pages/Home/components/ModalWindow/ModalWindow';
 import InputField from "pages/shared/InputField/InputField";
 import InputSelect from "pages/shared/InputSelect/InputSelect";
 import 'pages/Home/components/ModalWindow/MovieAddEdit/MovieAddEdit.scss';
+import {useDispatch} from "react-redux";
+import {addMovie, updateMovie} from "store/actions/MoviesActions";
 
-class MovieAddEdit extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            id: props.movie.id,
-            title: props.movie.title,
-            date: props.movie.release_date,
-            genre: props.movie.genres,
-            overview: props.movie.overview,
-            runtime: props.movie.runtime,
-            isEdit: props.isEdit
-        };
+const MovieAddEdit = ({onClose, movie, isEdit}) => {
 
-        this.handleMovieChange = this.handleMovieChange.bind(this);
-        this.handleMovieEditSubmit = this.handleMovieEditSubmit.bind(this);
-    }
+    const [form, setForm] = useState({
+        id: '',
+        title: '',
+        releaseDate: '',
+        genres: [],
+        overview: '',
+        runtime: 0,
+        poster_path: '',
+    });
 
-    handleMovieChange(event) {
-        const {name, value} = event.target;
-        this.setState({
-            [name]: value
+    useEffect(() => {
+        setForm({
+            id: movie.id,
+            title: movie.title,
+            releaseDate: movie.date,
+            genres: movie.genres,
+            overview: movie.overview,
+            runtime: movie.runtime == null ? 0 : movie.runtime,
+            poster_path: movie.poster_path,
         });
+    }, [setForm]);
+
+    const changeHandler = event => {
+        setForm({ ...form, [event.target.name]: event.target.value });
     }
 
-    handleMovieEditSubmit(event) {
-        alert("Saved movie data")
+    const dispatch = useDispatch();
+
+    const handleMovieSubmit = event => {
+        if (isEdit) {
+            dispatch(updateMovie({ ...form}));
+        } else {
+            dispatch(addMovie({ ...form}));
+        }
         event.preventDefault();
+        onClose();
     }
 
-    render() {
-        return (
-            <ModalWindow closeWindow={this.props.onClose}>
-                <div className="movie-edit">
-                    <div className="movie-edit__title">{this.state.isEdit ? 'Edit' : 'Add' + ' movie'}</div>
-                    <form className="movie-edit__form" ref="form" onSubmit={this.handleMovieEditSubmit}>
-                        <InputField label="Id" value={this.state.id} type="text" name="id" placeholder="Id here"
-                                    handleMovieChange={this.handleMovieChange} required/>
-                        <InputField label="Title" value={this.state.title} type="text" name="title"
-                                    placeholder="Title here"
-                                    handleMovieChange={this.handleMovieChange} required/>
-                        <InputField label="Release date" value={this.state.date} type="date" name="date"
-                                    placeholder="Release date here"
-                                    handleMovieChange={this.handleMovieChange} required/>
-                        <InputSelect label="Genre" name="genre" genres={this.state.genre}/>
-                        <InputField label="Overview" value={this.state.overview} type="text" name="overview"
-                                    placeholder="Overview here"
-                                    handleMovieChange={this.handleMovieChange} required/>
-                        <InputField label="Overview" value={this.state.runtime} type="number" name="runtime"
-                                    placeholder="Runtime here"
-                                    handleMovieChange={this.handleMovieChange} required/>
-                        <div className="movie-edit__button-wrapper">
-                            <button className="movie-edit__button movie-edit__button--reset" type="reset">Reset
-                            </button>
-                            <button className="movie-edit__button movie-edit__button--submit"
-                                    type="submit">{this.state.isEdit ? 'Save' : 'Submit'}
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </ModalWindow>
-        );
-    };
+    return (
+        <ModalWindow closeWindow={onClose}>
+            <div className="movie-edit">
+                <div className="movie-edit__title">{isEdit ? 'Edit' : 'Add movie'}</div>
+                <form className="movie-edit__form" onSubmit={handleMovieSubmit}>
+                    <InputField label="Id" value={form.id} type="text" name="id" placeholder="Id here"
+                                handleMovieChange={changeHandler} required/>
+                    <InputField label="Title" value={form.title} type="text" name="title"
+                                placeholder="Title here"
+                                handleMovieChange={changeHandler} required/>
+                    <InputField label="Release date" value={form.releaseDate} type="date" name="date"
+                                placeholder="Release date here"
+                                handleMovieChange={changeHandler} required/>
+                    <InputSelect label="Genre" name="genre" genres={form.genres}/>
+                    <InputField label="Overview" value={form.overview} type="text" name="overview"
+                                placeholder="Overview here"
+                                handleMovieChange={changeHandler} required/>
+                    <InputField label="Runtime" value={form.runtime} type="number" name="runtime"
+                                placeholder="Runtime here"
+                                handleMovieChange={changeHandler} required/>
+                    <div className="movie-edit__button-wrapper">
+                        <button className="movie-edit__button movie-edit__button--reset" type="reset">Reset
+                        </button>
+                        <button className="movie-edit__button movie-edit__button--submit"
+                                type="submit">{isEdit ? 'Save' : 'Submit'}
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </ModalWindow>
+    );
 }
 
 export default MovieAddEdit;

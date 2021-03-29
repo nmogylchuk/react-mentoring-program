@@ -1,22 +1,20 @@
-import React, {useState} from 'react';
+import React from 'react';
 import ErrorBoundary from 'pages/shared/ErrorBoundary/ErrorBoundary';
 import Navigation from 'pages/Home/components/Navigation/Navigation'
-import MovieList from 'pages/Home/components/MovieList/MovieList';
 import Search from 'pages/Home/components/Search/Search';
+import MoviesContainer from 'containers/MoviesContainer';
 import 'pages/Home/Home.scss';
-import MoviesContainer from "containers/MoviesContainer";
-import MovieSort from "pages/Home/components/MovieSort/MovieSort";
 
 const Home = (props) => {
     const {handleSearchIcon} = props;
+    console.log("home");
 
     return (
         <section className="home">
             <Search/>
             <Navigation/>
             <ErrorBoundary>
-                {/*<MovieList handleSearchIcon={handleSearchIcon}/>*/}
-                <MoviesContainer/>
+                <MoviesContainer handleSearchIcon={handleSearchIcon}/>
             </ErrorBoundary>
         </section>
     )

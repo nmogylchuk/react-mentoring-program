@@ -8,10 +8,10 @@ const DeleteMovie = (props) => {
 
     const {closeModal, id} = props;
     const dispatch = useDispatch();
-
     function handleRemove() {
-        alert(`Removed movie id: ${id}`);
         dispatch(deleteMovies(id));
+        alert(`Removed movie id: ${id}`);
+        closeModal();
     }
 
     return (

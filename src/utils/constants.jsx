@@ -42,6 +42,11 @@ function isEmptyArray(object) {
     return object == null || (typeof object !== 'undefined' && object.length === 0);
 }
 
+function isEmpty(object) {
+    // object == null || (typeof object !== 'undefined' || Object.keys(object).length == 0)
+    return Object.keys(object).length == 0;
+}
+
 module.exports = {
     movieFilterData,
     movieSortData,
