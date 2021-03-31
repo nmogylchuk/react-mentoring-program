@@ -4,8 +4,10 @@ import 'pages/shared/Header/MovieAddButton/MovieAddButton.scss';
 
 const MovieAddButton = (props) => {
 
+    const {openModal} = props;
+
     return (
-        <Button className="movie-add-button" onClick={props.onClick}>+ Add Movie</Button>
+        <Button className="movie-add-button" onClick={openModal}>+ Add Movie</Button>
     );
 }
 

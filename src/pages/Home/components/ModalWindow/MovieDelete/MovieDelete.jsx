@@ -4,12 +4,14 @@ import 'pages/Home/components/ModalWindow/MovieDelete/MovieDelete.scss';
 
 const DeleteMovie = (props) => {
 
+    const {closeModal, id} = props;
+
     function handleRemove() {
-        alert(`Removed movie id: ${props.movie.id}`);
+        alert(`Removed movie id: ${id}`);
     }
 
     return (
-        <ModalWindow onClick={props.onClose}>
+        <ModalWindow closeWindow={closeModal}>
             <div className="movie-delete">
                 <div className="movie-delete__title">Delete movie</div>
                 <p className="movie-delete__description">Are you sure you want to delete this movie?</p>

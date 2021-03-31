@@ -1,38 +1,35 @@
-import React from 'react';
+import React, {useState, useCallback} from 'react';
+import { Link } from 'react-router-dom';
 import MovieAddButton from 'pages/shared/Header/MovieAddButton/MovieAddButton';
-import Search from 'pages/Home/components/Search/Search'
 import Logo from 'pages/shared/Logo/Logo';
-import MovieAddEdit from "pages/Home/components/ModalWindow/MovieAddEdit/MovieAddEdit";
-import {movie} from 'utils/constants'
+import MovieAddEdit from 'pages/Home/components/ModalWindow/MovieAddEdit/MovieAddEdit';
+import SearchIcon from 'pages/shared/Header/SearchIcon/SearchIcon';
+import {movie} from 'utils/constants';
 import 'pages/shared/Header/Header.scss';
 
-class Header extends React.Component {
-    state = {
-        addModalVisible: false
-    }
 
-    showAddModal = () => {
-        this.setState({addModalVisible: true});
-    };
+function Header(props) {
 
-    closeAddModal = () => {
-        this.setState({addModalVisible: false});
-    }
+    const {searchIconVisible, handleSearchIcon} = props;
 
-    render() {
-        return (
-            <header className="header">
-                <div className="header__wrapper">
-                    <a href="#" className="header__link">
-                        <Logo/>
-                    </a>
-                    <MovieAddButton onClick={this.showAddModal}/>
-                    {this.state.addModalVisible && <MovieAddEdit onClose={this.closeAddModal} movie={movie}/>}
-                </div>
-                <Search/>
-            </header>
-        );
-    }
+    const [addModalVisible, setAddModalVisible] = useState(false);
+
+    const handleAddModal = useCallback(() => {
+        setAddModalVisible(!addModalVisible);
+    }, [addModalVisible]);
+
+    return (
+        <header className="header">
+            <div className="header__wrapper">
+                <Link to="/" className="header__link">
+                    <Logo/>
+                </Link>
+                {!searchIconVisible && <MovieAddButton openModal={handleAddModal}/>}
+                {addModalVisible && <MovieAddEdit onClose={handleAddModal} movie={movie}/>}
+                {searchIconVisible && <SearchIcon handleSearchIcon={handleSearchIcon}/>}
+            </div>
+        </header>
+    );
 }
 
 export default Header;
