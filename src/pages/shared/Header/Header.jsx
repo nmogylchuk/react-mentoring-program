@@ -25,7 +25,7 @@ function Header(props) {
                     <Logo/>
                 </Link>
                 {!searchIconVisible && <MovieAddButton openModal={handleAddModal}/>}
-                {addModalVisible && <MovieAddEdit onClose={handleAddModal} movie={movie}/>}
+                {addModalVisible && <MovieAddEdit onClose={handleAddModal} movie={movie} isEdit={false}/>}
                 {searchIconVisible && <SearchIcon handleSearchIcon={handleSearchIcon}/>}
             </div>
         </header>

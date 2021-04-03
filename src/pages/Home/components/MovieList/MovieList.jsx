@@ -14,7 +14,7 @@ const MovieList = ({movies, handleSearchIcon}) => {
             </div>
             <Grid container spacing={1} alignContent={'space-around'}>
 
-                {isEmptyArray(movies) ? null : (
+                {!isEmptyArray(movies) && (
                     movies.data.map(movie => (
                         <MovieItem key={movie.id} movie={movie} handleSearchIcon={handleSearchIcon}/>
                     ))
