@@ -7,6 +7,12 @@
 
   &__picture {
     width: 30%;
+    min-height: 470px;
+    border: 1px solid $grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $grey;
   }
 
   &__info {

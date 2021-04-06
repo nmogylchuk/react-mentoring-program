@@ -31,7 +31,7 @@ const MovieItem = (props) => {
                 <ThreeDotMenu showMenu={handleThreeDotMenuActions}/>
                 {threeDotMenuVisible &&
                 <ThreeDotMenuActions closeMenu={handleThreeDotMenuActions} movie={movie}/>}
-                <img src={movie.poster_path} alt={`picture of ${movie.title}`} onClick={goToMovieDetails}/>
+                <img className="movie-item__picture" src={movie.poster_path ? movie.poster_path : defaultImage} alt={`picture of ${movie.title}`} onClick={goToMovieDetails}/>
                 <div className="movie-item__info">
                     <div className="movie-item__details">
                         <div className="movie-item__title">{movie.title}</div>
@@ -50,7 +50,7 @@ MovieItem.propTypes = {
     movie: PropTypes.shape({
         id: PropTypes.number.isRequired,
         title: PropTypes.string.isRequired,
-        poster_path: PropTypes.string.isRequired,
+        poster_path: PropTypes.string,
         genres: PropTypes.array.isRequired,
         release_date: PropTypes.string.isRequired
     })

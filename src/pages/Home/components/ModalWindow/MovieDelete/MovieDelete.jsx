@@ -1,13 +1,17 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import ModalWindow from 'pages/Home/components/ModalWindow/ModalWindow';
+import { deleteMovies } from 'store/actions/MoviesActions';
 import 'pages/Home/components/ModalWindow/MovieDelete/MovieDelete.scss';
 
 const DeleteMovie = (props) => {
 
     const {closeModal, id} = props;
-
+    const dispatch = useDispatch();
     function handleRemove() {
+        dispatch(deleteMovies(id));
         alert(`Removed movie id: ${id}`);
+        closeModal();
     }
 
     return (

@@ -1,15 +1,31 @@
 import React from 'react';
+import {useDispatch} from 'react-redux';
+import {movieFilterData} from 'utils/constants';
+import {setFilterValue} from 'store/actions/FilterActions';
 import 'pages/Home/components/MovieFilter/MovieFilter.scss';
 
-const MovieFilter = ({movieFilterData}) => {
+const MovieFilter = () => {
+    const dispatch = useDispatch();
+
+    const filterOnChange = (ev) => {
+        ev.preventDefault();
+        console.log(filterOnChange);
+        console.log({filterOnChange});
+        let filterBy = ev.target.value;
+        if (filterBy === 'all') {
+            filterBy = '';
+        }
+        dispatch(setFilterValue(filterBy));
+    };
 
     return (
         <nav className='movie-filter'>
             <ul className='movie-filter__list'>
                 {movieFilterData.map((movieFilterItem, index) => (
-                    <li key={index} className='movie-filter__item'>
-                        <a href="#" className='movie-filter__link'>{movieFilterItem}</a>
-                    </li>
+                    <button key={index} onClick={filterOnChange} value={movieFilterItem.value}>{movieFilterItem.field}</button>
+                    // <li key={index} className='movie-filter__item'>
+                    //     <a onClick={filterOnChange} value={movieFilterItem.value} className='movie-filter__link'>{movieFilterItem.field}</a>
+                    // </li>
                 ))}
             </ul>
         </nav>
