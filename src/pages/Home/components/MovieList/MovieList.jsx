@@ -1,6 +1,7 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import MovieItem from 'pages/Home/components/MovieItem/MovieItem';
+import NoMovieFound from 'pages/Home/components/NoMovieFound/NoMovieFound';
 import 'pages/Home/components/MovieList/MovieList.scss';
 import {isEmptyArray} from "utils/constants";
 
@@ -13,12 +14,12 @@ const MovieList = ({movies, handleSearchIcon}) => {
                 found
             </div>
             <Grid container spacing={1} alignContent={'space-around'}>
-
-                {!isEmptyArray(movies) && (
+                {!isEmptyArray(movies) ? (
                     movies.data.map(movie => (
                         <MovieItem key={movie.id} movie={movie} handleSearchIcon={handleSearchIcon}/>
-                    ))
-                )}
+                    ))) :
+                    <NoMovieFound />
+                }
             </Grid>
         </div>
     );

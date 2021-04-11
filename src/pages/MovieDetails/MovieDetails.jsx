@@ -1,10 +1,9 @@
 import React, {useEffect} from 'react';
 import {useParams} from 'react-router-dom';
+import {useDispatch, useSelector} from 'react-redux';
+import {getMovie} from 'store/selectors';
+import {requestMovie} from 'store/actions/MoviesActions';
 import 'pages/MovieDetails/MovieDetails.scss';
-import {isEmpty} from "utils/constants";
-import {useDispatch, useSelector} from "react-redux";
-import {getMovie} from "store/selectors";
-import {requestMovie} from "store/actions/MoviesActions";
 
 const MovieDetails = () => {
     const dispatch = useDispatch();
@@ -16,7 +15,6 @@ const MovieDetails = () => {
     }, [dispatch, movieId]);
 
     const {poster_path, title, genres, release_date, vote_average, runtime, overview} = movie;
-
     const releaseDate = new Date(release_date).getFullYear();
     const genre = Array.isArray(genres) ? genres.join(', ') : '';
 

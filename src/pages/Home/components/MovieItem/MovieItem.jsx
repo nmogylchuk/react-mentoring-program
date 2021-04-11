@@ -19,7 +19,7 @@ const MovieItem = (props) => {
 
     const goToMovieDetails = () => {
         handleSearchIcon(true);
-        history.push(`/${movie.id}`)
+        history.push(`/film/${movie.id}`)
     }
 
     const releaseDate = new Date(movie.release_date).getFullYear();

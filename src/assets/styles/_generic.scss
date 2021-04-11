@@ -29,7 +29,9 @@ body {
   }
 
   &::before {
-    background: url('https://portugalsnews.com/wp-content/uploads/2019/08/Netflix-Pauses-Algorithms-Creates-Curated-Collections-to-Suggest-Content-Computers-1280x720.png') no-repeat;
+    background: url('https://portugalsnews.com/wp-content/uploads/2019/08/Netflix-Pauses-Algorithms-Creates-Curated-Collections-to-Suggest-Content-Computers-1280x720.png')
+      center center no-repeat;
+    background-size: cover;
   }
 
   &::after {
