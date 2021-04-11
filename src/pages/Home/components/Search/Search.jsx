@@ -23,21 +23,12 @@ const Search = () => {
         setValue(ev.target.value);
     };
 
-    // const searchOnChange = (ev) => {
-    //     ev.preventDefault();
-    //     let sortBy = ev.target.value;
-    //     if (sortBy === '') {
-    //         sortBy = 'title';
-    //     }
-    //     dispatch(setSearchValue(sortBy));
-    // };
-
     return (
         <div className='search'>
             <div className='search-wrapper'>
                 <div className='search__title'>Find your movie</div>
                 <form action="#" className="search__form">
-                    <input type='text' className='search__input' placeholder='What do you want to watch?'                     value = {value}
+                <input type='text' className='search__input' placeholder='What do you want to watch?'                     value = {value}
                            onChange = {searchOnChange}
                            value = {value} />
                     <Button className="search__button" onClick={handleSearch}>Search</Button>
