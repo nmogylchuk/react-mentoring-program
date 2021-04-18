@@ -2,9 +2,9 @@ import React, {useState, useCallback} from 'react';
 import {useHistory} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
-import ThreeDotMenu from 'pages/Home/components/MovieItem/ThreeDotMenu/ThreeDotMenu';
-import ThreeDotMenuActions from 'pages/Home/components/MovieItem/ThreeDotMenuActions/ThreeDotMenuActions';
-import 'pages/Home/components/MovieItem/MovieItem.scss';
+import './MovieItem.scss';
+import ThreeDotMenu from './ThreeDotMenu/ThreeDotMenu';
+import ThreeDotMenuActions from './ThreeDotMenuActions/ThreeDotMenuActions';
 
 const MovieItem = (props) => {
     const {handleSearchIcon, movie} = props;
@@ -31,7 +31,7 @@ const MovieItem = (props) => {
                 <ThreeDotMenu showMenu={handleThreeDotMenuActions}/>
                 {threeDotMenuVisible &&
                 <ThreeDotMenuActions closeMenu={handleThreeDotMenuActions} movie={movie}/>}
-                <img className="movie-item__picture" src={movie.poster_path ? movie.poster_path : defaultImage} alt={`picture of ${movie.title}`} onClick={goToMovieDetails}/>
+                <img className="movie-item__picture" src={movie.poster_path} alt={`picture of ${movie.title}`} onClick={goToMovieDetails}/>
                 <div className="movie-item__info">
                     <div className="movie-item__details">
                         <div className="movie-item__title">{movie.title}</div>

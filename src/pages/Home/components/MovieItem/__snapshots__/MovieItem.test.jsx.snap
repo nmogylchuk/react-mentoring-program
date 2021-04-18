@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when Movie then snapshot created 1`] = `
+<div
+  className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-sm-6 MuiGrid-grid-md-4 MuiGrid-grid-lg-3"
+>
+  <article
+    className="movie-item"
+  >
+    <div
+      className="three-dots-menu"
+      onClick={[Function]}
+    />
+    <img
+      alt="picture of Guardians of the Galaxy Vol. 3"
+      className="movie-item__picture"
+      onClick={[Function]}
+      src="https://image.tmdb.org/t/p/w500/ldoY4fTZkGISMidNw60GHoNdgP8.jpg"
+    />
+    <div
+      className="movie-item__info"
+    >
+      <div
+        className="movie-item__details"
+      >
+        <div
+          className="movie-item__title"
+        >
+          Guardians of the Galaxy Vol. 3
+        </div>
+        <div
+          className="movie-item__release-date"
+        >
+          2020
+        </div>
+      </div>
+      <div
+        className="movie-item__genres"
+      >
+        Action, Adventure, Science Fiction
+      </div>
+    </div>
+  </article>
+</div>
+`;

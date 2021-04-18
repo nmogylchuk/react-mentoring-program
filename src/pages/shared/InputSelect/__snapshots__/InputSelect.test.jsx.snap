@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when Input Select then snapshot created 1`] = `
+<div
+  className="input-select"
+>
+  <label
+    className="input-select__label"
+  >
+    Genres
+  </label>
+  <select
+    className="input-select__list"
+    multiple={true}
+    name="genres"
+    value={
+      Array [
+        "Action",
+        "Adventure",
+        "Science Fiction",
+      ]
+    }
+  >
+    <option
+      className="input-select__item"
+    >
+      Action
+    </option>
+    <option
+      className="input-select__item"
+    >
+      Adventure
+    </option>
+    <option
+      className="input-select__item"
+    >
+      Science Fiction
+    </option>
+  </select>
+</div>
+`;

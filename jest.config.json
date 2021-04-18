@@ -8,5 +8,8 @@
     },
     "transformIgnorePatterns": [
         "/node_modules/"
-    ]
+    ],
+    "moduleNameMapper": {
+        "\\.(css|less|scss)$": "<rootDir>/__mocks__/styleMock.js"
+    }
 }
