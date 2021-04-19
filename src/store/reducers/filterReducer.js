@@ -1,4 +1,4 @@
-import {SET_FILTER_VALUE} from 'store/actions/FilterActions';
+import {SET_FILTER_VALUE} from '../../store/reducers/sortingReducer';
 
 const initialState = {
     filterValue: ''

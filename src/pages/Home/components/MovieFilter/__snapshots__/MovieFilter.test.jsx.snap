@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when MovieFilter then snapshot created 1`] = `
+<nav
+  className="movie-filter"
+>
+  <ul
+    className="movie-filter__list"
+  >
+    <button
+      onClick={[Function]}
+      value="all"
+    >
+      All
+    </button>
+    <button
+      onClick={[Function]}
+      value="documentary"
+    >
+      Documentary
+    </button>
+    <button
+      onClick={[Function]}
+      value="comedy"
+    >
+      Comedy
+    </button>
+    <button
+      onClick={[Function]}
+      value="horror"
+    >
+      Horror
+    </button>
+  </ul>
+</nav>
+`;

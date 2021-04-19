@@ -1,21 +1,22 @@
 import React from 'react';
 import rerender from 'react-test-renderer';
-import DeleteMovie from "./MovieDelete";
+import MovieFilter from './MovieFilter';
 import {Provider} from 'react-redux'
 import configureStore from 'redux-mock-store';
 import {jest} from "@jest/globals";
-import {movie} from '../../../../../../__mocks__/mockData';
 
-describe('when Delete Movie', () => {
+describe('when MovieFilter', () => {
 
-    test('then snapshot delete', () => {
+    test('then snapshot created', () => {
         const initialStore = {};
         const store = configureStore([])(initialStore);
         store.dispatch = jest.fn();
-        const deleteMovieComponent = rerender.create(<Provider store={store}>
-            <DeleteMovie onClose={jest.fn()} id={movie.id}/>
+        const movieFilterComponent = rerender.create(<Provider store={store}>
+            <MovieFilter/>
         </Provider>);
-        const tree = deleteMovieComponent.toJSON();
+
+        const tree = movieFilterComponent.toJSON();
         expect(tree).toMatchSnapshot();
     });
+
 });

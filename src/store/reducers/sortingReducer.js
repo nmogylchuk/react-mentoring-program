@@ -1,4 +1,4 @@
-import {SET_SORTING_ORDER, SET_SORTING_VALUE} from 'store/actions/SortingActions';
+import {SET_SORTING_ORDER, SET_SORTING_VALUE} from '../actions/SortingActions';
 
 const initialState = {
     sortingValue: 'release_date',

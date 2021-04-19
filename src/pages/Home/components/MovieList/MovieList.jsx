@@ -1,9 +1,9 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import MovieItem from 'pages/Home/components/MovieItem/MovieItem';
-import NoMovieFound from 'pages/Home/components/NoMovieFound/NoMovieFound';
-import 'pages/Home/components/MovieList/MovieList.scss';
-import {isEmpty, isEmptyArray} from "utils/constants";
+import MovieItem from '../../../../pages/Home/components/MovieItem/MovieItem';
+import NoMovieFound from '../../../../pages/Home/components/NoMovieFound/NoMovieFound';
+import '../../../../pages/Home/components/MovieList/MovieList.scss';
+import {isEmpty, isEmptyArray} from '../../../../utils/constants';
 
 const MovieList = ({movies, handleSearchIcon}) => {
     const moviesCount = isEmptyArray(movies) ? 0 : movies.totalAmount;
