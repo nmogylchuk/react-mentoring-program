@@ -25,15 +25,13 @@ const modals = {
     DEFAULT: null
 }
 
+const genres = ['Drama', 'Romance', 'Comedy'];
+
 const movie = {
     id: '',
     title: '',
     date: '',
-    genres: [
-        'Drama',
-        'Romance',
-        'Comedy',
-    ],
+    genres: genres,
     overview: '',
     runtime: ''
 }
@@ -43,7 +41,6 @@ function isEmptyArray(object) {
 }
 
 function isEmpty(object) {
-    // object == null || (typeof object !== 'undefined' || Object.keys(object).length == 0)
     return Object.keys(object).length == 0;
 }
 
@@ -52,5 +49,6 @@ module.exports = {
     movieSortData,
     modals,
     movie,
-    isEmptyArray
+    isEmptyArray,
+    genres
 }

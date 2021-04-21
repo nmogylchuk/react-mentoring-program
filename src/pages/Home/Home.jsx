@@ -7,7 +7,6 @@ import 'pages/Home/Home.scss';
 
 const Home = (props) => {
     const {handleSearchIcon} = props;
-    console.log("home");
 
     return (
         <section className="home">
