@@ -41,7 +41,7 @@ function isEmptyArray(object) {
 }
 
 function isEmpty(object) {
-    return Object.keys(object).length == 0;
+    return typeof object == 'undefined' || Object.keys(object).length == 0;
 }
 
 module.exports = {
@@ -50,5 +50,6 @@ module.exports = {
     modals,
     movie,
     isEmptyArray,
+    isEmpty,
     genres
 }

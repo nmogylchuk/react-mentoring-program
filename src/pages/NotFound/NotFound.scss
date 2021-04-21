@@ -1,0 +1,36 @@
+@import 'src/assets/styles/variables';
+@import 'src/assets/styles/mixins';
+
+.not-found {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 90vh;
+
+  &__image {
+    width: 65%;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-size: 30px;
+  }
+
+  &__button {
+    @include button();
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    background: $dark-grey;
+    color: $red;
+    border: 1px solid $red;
+    margin: 10px auto;
+
+    &:hover {
+      background: $red;
+      color: $white;
+    }
+  }
+}

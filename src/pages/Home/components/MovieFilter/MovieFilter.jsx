@@ -9,8 +9,6 @@ const MovieFilter = () => {
 
     const filterOnChange = (ev) => {
         ev.preventDefault();
-        console.log(filterOnChange);
-        console.log({filterOnChange});
         let filterBy = ev.target.value;
         if (filterBy === 'all') {
             filterBy = '';

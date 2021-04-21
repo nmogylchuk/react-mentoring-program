@@ -1,7 +1,6 @@
 import axios from "axios";
 import {API} from 'url/url';
 
-// export const GET_MOVIES = 'GET_MOVIES';
 export const GET_MOVIES_REQUEST_START = 'GET_MOVIES_REQUEST_START';
 export const GET_MOVIES_REQUEST_SUCCESS = 'GET_MOVIES_REQUEST_SUCCESS';
 export const GET_MOVIES_REQUEST_ERROR = 'GET_MOVIES_REQUEST_ERROR';
