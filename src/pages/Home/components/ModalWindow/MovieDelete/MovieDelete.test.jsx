@@ -3,7 +3,6 @@ import rerender from 'react-test-renderer';
 import DeleteMovie from "./MovieDelete";
 import {Provider} from 'react-redux'
 import configureStore from 'redux-mock-store';
-import {jest} from "@jest/globals";
 import {movie} from '../../../../../../__mocks__/mockData';
 
 describe('when Delete Movie', () => {

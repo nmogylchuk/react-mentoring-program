@@ -1,7 +1,6 @@
 import React from 'react';
 import rerender from 'react-test-renderer';
 import MovieList from "./MovieList";
-import {jest} from "@jest/globals";
 import {movie} from '../../../../../__mocks__/mockData'
 
 describe('when Movie List', () => {

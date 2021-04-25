@@ -1,7 +1,6 @@
 import React from 'react';
 import MovieAddEdit from "./MovieAddEdit";
 import rerender from "react-test-renderer";
-import { jest } from "@jest/globals";
 import configureStore from "redux-mock-store";
 import { Provider } from "react-redux";
 import {movie} from '../../../../../../__mocks__/mockData';
