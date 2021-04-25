@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when Three Dot Menu Actions then snapshot created 1`] = `
+<div>
+  <div
+    className="three-dot-menu-actions"
+  >
+    <div
+      className="close-button"
+    />
+    <div
+      className="three-dot-menu-actions__item"
+      onClick={[Function]}
+    >
+      Edit Movie
+    </div>
+    <div
+      className="three-dot-menu-actions__item"
+      onClick={[Function]}
+    >
+      Delete Movie
+    </div>
+  </div>
+</div>
+`;

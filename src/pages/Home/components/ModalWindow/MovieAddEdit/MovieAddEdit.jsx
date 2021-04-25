@@ -2,12 +2,12 @@ import React from 'react';
 import {useFormik} from 'formik';
 import * as Yup from 'yup';
 import {useDispatch} from 'react-redux';
-import ModalWindow from 'pages/Home/components/ModalWindow/ModalWindow';
-import InputField from 'pages/shared/InputField/InputField';
-import InputSelect from 'pages/shared/InputSelect/InputSelect';
-import 'pages/Home/components/ModalWindow/MovieAddEdit/MovieAddEdit.scss';
-import {addMovie, updateMovie} from 'store/actions/MoviesActions';
-import {genres} from 'utils/constants';
+import ModalWindow from '../ModalWindow';
+import InputField from '../../../../shared/InputField/InputField';
+import InputSelect from '../../../../shared/InputSelect/InputSelect';
+import './MovieAddEdit.scss';
+import {addMovie, updateMovie} from '../../../../../store/actions/MoviesActions';
+import {genres} from '../../../../../utils/constants';
 
 const MovieAddEdit = ({onClose, movie, isEdit}) => {
 

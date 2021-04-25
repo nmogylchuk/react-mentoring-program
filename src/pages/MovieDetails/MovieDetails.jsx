@@ -1,9 +1,9 @@
 import React, {useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
-import {getMovie} from 'store/selectors';
-import {requestMovie} from 'store/actions/MoviesActions';
-import 'pages/MovieDetails/MovieDetails.scss';
+import {getMovie} from '../../store/selectors';
+import {requestMovie} from '../../store/actions/MoviesActions';
+import '../../pages/MovieDetails/MovieDetails.scss';
 
 const MovieDetails = () => {
     const dispatch = useDispatch();

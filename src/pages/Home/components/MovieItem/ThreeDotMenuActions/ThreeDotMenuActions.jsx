@@ -1,9 +1,9 @@
-import React, {useCallback, useState} from 'react';
-import MovieAddEdit from 'pages/Home/components/ModalWindow/MovieAddEdit/MovieAddEdit';
-import MovieDelete from 'pages/Home/components/ModalWindow/MovieDelete/MovieDelete';
-import CloseButton from 'pages/shared/CloseButton/CloseButton';
-import {modals} from 'utils/constants';
-import 'pages/Home/components/MovieItem/ThreeDotMenuActions/ThreeDotMenuActions.scss';
+import React, {useState} from 'react';
+import MovieAddEdit from '../../ModalWindow/MovieAddEdit/MovieAddEdit';
+import MovieDelete from '../../ModalWindow/MovieDelete/MovieDelete';
+import CloseButton from '../../../../shared/CloseButton/CloseButton';
+import {modals} from '../../../../../utils/constants';
+import './ThreeDotMenuActions.scss';
 
 const ThreeDotMenuActions = (props) => {
     const {closeMenu, movie} = props;

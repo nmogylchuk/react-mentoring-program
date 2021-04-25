@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when Movie Add Edit then snapshot created 1`] = `null`;
+
+exports[`when Movie Add Edit then snapshot update 1`] = `null`;

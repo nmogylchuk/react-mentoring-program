@@ -1,8 +1,8 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import ModalWindow from 'pages/Home/components/ModalWindow/ModalWindow';
-import { deleteMovies } from 'store/actions/MoviesActions';
-import 'pages/Home/components/ModalWindow/MovieDelete/MovieDelete.scss';
+import ModalWindow from '../ModalWindow';
+import { deleteMovies } from '../../../../../store/actions/MoviesActions';
+import './MovieDelete.scss';
 
 const DeleteMovie = (props) => {
 

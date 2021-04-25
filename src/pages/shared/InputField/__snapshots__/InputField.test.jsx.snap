@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when Input Field then snapshot created 1`] = `
+<div
+  className="input-field"
+>
+  <label
+    className="input-field__label"
+  >
+    Title
+  </label>
+  <input
+    className="input-field__input"
+    name="title"
+    onChange={[MockFunction]}
+    placeholder="Title here"
+    type="text"
+    value="Guardians of the Galaxy Vol. 3"
+  />
+</div>
+`;
