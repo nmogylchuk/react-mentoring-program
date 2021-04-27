@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from "@material-ui/core/Button";
-import 'pages/shared/Header/MovieAddButton/MovieAddButton.scss';
+import './MovieAddButton.scss';
 
 const MovieAddButton = (props) => {
 

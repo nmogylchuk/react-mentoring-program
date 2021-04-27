@@ -1,7 +1,7 @@
 import React from 'react';
 import {useHistory} from "react-router-dom";
 import Button from "@material-ui/core/Button";
-import 'pages/shared/Header/SearchIcon/SearchIcon.scss';
+import './SearchIcon.scss';
 
 function SearchIcon(props) {
     const {handleSearchIcon} = props;

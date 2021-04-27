@@ -1,5 +1,5 @@
 import React from 'react';
-import 'pages/Home/components/NoMovieFound/NoMovieFound.scss';
+import './NoMovieFound.scss';
 
 const NoFound = () => {
     return (

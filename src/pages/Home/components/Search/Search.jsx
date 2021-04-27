@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import {useDispatch} from 'react-redux';
 import Button from '@material-ui/core/Button';
-import 'pages/Home/components/Search/Search.scss';
-import {setSearchValue} from "store/actions/SearchActions";
+import './Search.scss';
+import {setSearchValue} from './../../../../store/actions/SearchActions';
 
 const Search = () => {
     const [value, setValue] = useState('');

@@ -1,4 +1,4 @@
-import { SET_SEARCH_VALUE, SET_SEARCH_BY } from 'store/actions/SearchActions';
+import { SET_SEARCH_VALUE, SET_SEARCH_BY } from './../../store/actions/SearchActions';
 
 const initialState = {
   searchValue: '',
