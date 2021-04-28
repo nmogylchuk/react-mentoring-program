@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-import filterReducer from 'store/reducers/filterReducer';
-import sortingReducer from 'store/reducers/sortingReducer';
-import moviesReducer from 'store/reducers/moviesReducer';
-import searchReducer from 'store/reducers/searchReducer';
+import filterReducer from './filterReducer';
+import sortingReducer from './sortingReducer';
+import moviesReducer from './moviesReducer';
+import searchReducer from './searchReducer';
 
 const rootReducer = combineReducers({
     filter: filterReducer,

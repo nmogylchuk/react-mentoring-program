@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import 'pages/shared/InputSelect/InputSelect.scss';
+import React from 'react';
+import PropTypes from 'prop-types';
+import './InputSelect.scss';
 
 function InputSelect({label, name, genres, value, handleMovieChange}) {
     return (

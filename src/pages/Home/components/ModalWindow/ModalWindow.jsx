@@ -1,6 +1,6 @@
 import React from 'react';
 import {createPortal} from 'react-dom';
-import CloseButton from '../../../shared/CloseButton/CloseButton';
+import CloseButton from './../../../shared/CloseButton/CloseButton';
 import './ModalWindow.scss';
 
 const ModalWindow = (props) => {

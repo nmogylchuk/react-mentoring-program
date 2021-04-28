@@ -1,11 +1,11 @@
 import React, {useState, useCallback} from 'react';
 import { Link } from 'react-router-dom';
-import MovieAddButton from 'pages/shared/Header/MovieAddButton/MovieAddButton';
-import Logo from 'pages/shared/Logo/Logo';
-import MovieAddEdit from 'pages/Home/components/ModalWindow/MovieAddEdit/MovieAddEdit';
-import SearchIcon from 'pages/shared/Header/SearchIcon/SearchIcon';
-import {movie} from 'utils/constants';
-import 'pages/shared/Header/Header.scss';
+import MovieAddButton from '../../../pages/shared/Header/MovieAddButton/MovieAddButton';
+import Logo from '../../../pages/shared/Logo/Logo';
+import MovieAddEdit from '../../../pages/Home/components/ModalWindow/MovieAddEdit/MovieAddEdit';
+import SearchIcon from './../../../pages/shared/Header/SearchIcon/SearchIcon';
+import {movie} from '../../../utils/constants';
+import './Header.scss';
 
 
 function Header(props) {

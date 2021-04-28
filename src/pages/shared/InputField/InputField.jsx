@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import 'pages/shared/InputField/InputField.scss';
+import React from 'react';
+import PropTypes from 'prop-types';
+import './InputField.scss';
 
 function InputField({label, value, type, name, placeholder, handleMovieChange}) {
     return (

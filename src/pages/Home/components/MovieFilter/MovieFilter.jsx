@@ -2,7 +2,7 @@ import React from 'react';
 import {useDispatch} from 'react-redux';
 import {movieFilterData} from '../../../../utils/constants';
 import {setFilterValue} from '../../../../store/actions/FilterActions';
-import '../../../../pages/Home/components/MovieFilter/MovieFilter.scss';
+import './MovieFilter.scss';
 
 const MovieFilter = () => {
     const dispatch = useDispatch();

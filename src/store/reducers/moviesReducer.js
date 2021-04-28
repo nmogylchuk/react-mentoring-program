@@ -4,7 +4,7 @@ import {
     ADD_MOVIE_REQUEST_SUCCESS,
     UPDATE_MOVIE_REQUEST_SUCCESS,
     DELETE_MOVIE_REQUEST_SUCCESS,
-} from 'store/actions/MoviesActions';
+} from './../actions/MoviesActions';
 
 const initialState = {
     movies: [],

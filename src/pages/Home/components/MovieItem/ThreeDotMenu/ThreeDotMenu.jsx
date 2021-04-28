@@ -1,5 +1,5 @@
 import React from 'react';
-import 'pages/Home/components/MovieItem/ThreeDotMenu/ThreeDotMenu.scss';
+import './ThreeDotMenu.scss';
 
 const ThreeDotMenu = (props) => {
     const {showMenu} = props;
